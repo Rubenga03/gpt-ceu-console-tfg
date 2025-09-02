@@ -13,6 +13,7 @@ y consultas sin template.
 
 ## 🗺️ Arquitectura (resumen)
 
+```mermaid
 flowchart LR
   U[Usuario GPT-CEU] --> FE[Front-end GPT-CEU]
   FE --> AF[Azure Function (consola IA)]
@@ -20,3 +21,4 @@ flowchart LR
   OA <---> B[Azure Blob (Excel/CSV)]
   AF --> J[JSON (datos + metadata)] --> G[Gráfica interactiva]
   G --> FE --> U
+
