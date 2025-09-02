@@ -3,7 +3,7 @@ import blobs
 from dotenv import load_dotenv
 import os
 load_dotenv(dotenv_path=".env.local")
-api_key = os.getenv("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")
+api_key = os.getenv("OPENAI_API_KEY")
 
 
 
