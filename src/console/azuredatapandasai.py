@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 load_dotenv(dotenv_path=".env.local")
 import pandasai as pai
 import logging
+conn_str = os.getenv("AZURE_CONNECTION_STRING")
 
 pai.config.set({
    "save_logs": False,
@@ -45,7 +46,7 @@ def cargar_excel_desde_blob(container_name, blob_name, usecols=None):
 def cargar_csv_metadatos(container_name="csvexcelscuadrodemandos", blob_name="registro_excel_cuadro_mandos.csv"):
     """Carga el CSV de metadatos desde Azure Blob Storage."""
     try:
-        connection_string="DefaultEndpointsProtocol=https;AccountName=datosgptai;AccountKey=kXrHjAlAGfeijCq2FvHJdbCiZfLSBnFFTY7fYWxWHJVqxBtGiJeOgfen+2mQO8cChEGzHxeQpoc++ASt9h+FQg==;EndpointSuffix=core.windows.net"
+        connection_string= conn_str
         blob_service_client = BlobServiceClient.from_connection_string(connection_string)
         container_client = blob_service_client.get_container_client(container_name)
         blob_client = container_client.get_blob_client(blob_name)
