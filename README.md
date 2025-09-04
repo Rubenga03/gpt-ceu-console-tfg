@@ -93,4 +93,4 @@ flowchart LR
   OAI --> LLM[(OpenAI/PandasAI)]
   AZ --> CSV --> INI
   INI --> JSON[JSON (datos + metadata)] --> RESP[Respuesta HTTP]
-```
+
