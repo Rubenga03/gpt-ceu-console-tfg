@@ -30,6 +30,7 @@ flowchart LR
   J --> G
   G --> FE
   FE --> U
+```
 
 ## 📦 Estructura del repositorio
 src/console/            # Código de la consola (Azure Function + helpers)
@@ -92,4 +93,4 @@ flowchart LR
   OAI --> LLM[(OpenAI/PandasAI)]
   AZ --> CSV --> INI
   INI --> JSON[JSON (datos + metadata)] --> RESP[Respuesta HTTP]
-
+```
