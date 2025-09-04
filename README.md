@@ -81,4 +81,27 @@ LICENSE
 
 ---
 
+## Ejemplo de interacción
+Consulta del usuario: "Dime el total de matriculados en 2023-2024."
+
+Respuesta:
+{
+  "id_respuesta": "1",
+  "respuesta_usuario": [
+    {
+      "consulta": "Número total de matriculados en el curso 2023-2024",
+      "tipo_grafico": "None",
+      "template": "False",
+      "archivos_relevantes": ["matriculas_2023_2024.csv"],
+      "consulta_resumida": "Matriculados 2023-2024",
+      "titulo_grafico": "Sin título",
+      "grafico_conjunto": false,
+      "respuesta": "19326.0",
+      "respuesta_corta": "{\"matriculados\": 19326.0}"
+    }
+  ],
+  "formato_respuesta": "json",
+  "dominio": "Cuadro de mandos"
+}
+
 
