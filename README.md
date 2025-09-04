@@ -81,28 +81,4 @@ LICENSE
 
 ---
 
-### 🔄 Flujo entre módulos
-
-```mermaid
-flowchart LR
-  HTTP["Petición HTTP"]
-  INI["__init__.py"]
-  CFG["crear_agenteopenai.py"]
-  CSV["csvpandasai.py"]
-  AZ["azuredatapandasai.py"]
-  OAI["agente_openai.py"]
-  LLM["OpenAI / PandasAI"]
-  JSON["JSON: datos + metadata"]
-  RESP["Respuesta HTTP"]
-
-  HTTP --> INI
-  INI --> CFG
-  INI --> CSV
-  CSV --> AZ
-  CFG --> OAI
-  OAI --> LLM
-  AZ --> CSV
-  CSV --> INI
-  INI --> JSON
-  JSON --> RESP
 
