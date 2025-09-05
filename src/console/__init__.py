@@ -51,7 +51,7 @@ def initialize_assistant():
 ultimo_template_por_thread = {}
 
 def buscar_respuesta_previa(id_thread, consulta):
-    """Busca una respuesta previa en el historial del thread basada en la consulta exacta."""
+    """Busca una respuesta previa en el historial del thread"""
     try:
         messages = openai_agent.get_thread_messages(id_thread)
         for message in reversed(messages):
