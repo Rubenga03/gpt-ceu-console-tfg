@@ -1,0 +1,31 @@
+if nombre_proceso == "Cuadro de mandos":
+                nombre_archivo = pdf
+                thread_id = azure.create_thread()
+                response, file_id = azure.mensaje_archivo_code_interpreter_sin_citas_old(
+                    thread_id,
+                    "asst_uKxZfddx6inBiDjNwNhLCeZO",
+                    nombre_archivo,
+                    "crea la descripcion de este archivo",
+                    "pdfsceu/"+str(carpeta)
+                )
+                response = json.loads(response)
+               
+                descripcion = response["Descripcion"]
+
+                container = "csvexcelscuadrodemandos"
+                archivo_csv = "registro_excel_cuadro_mandos.csv"
+
+                # Si el blob con el CSV no existe, se crea uno nuevo con las columnas especificadas.
+                if not blobs_datosgptai.existe_blob(container, archivo_csv):
+                    dataframe = pd.DataFrame(columns=["NombreArchivo", "Descripcion"])
+                    new_row = pd.DataFrame([{"NombreArchivo": pdf, "Descripcion": descripcion}])
+                    dataframe = pd.concat([dataframe, new_row], ignore_index=True)
+                    blobs_datosgptai.guardar_archivo_blob(container, archivo_csv, dataframe.to_csv(index=False, sep=";"))
+                else:
+                    # Si el CSV existe, se carga el archivo para seguir procesándolo.
+                    csv_content = blobs_datosgptai.coger_archivo_blob(container, archivo_csv)
+                    dataframe = pd.read_csv(csv_content, encoding='utf-8', sep=";")
+                    new_row = pd.DataFrame([{"NombreArchivo": pdf, "Descripcion": descripcion}])
+                    dataframe = pd.concat([dataframe, new_row], ignore_index=True)
+                    blobs_datosgptai.guardar_archivo_blob(container, archivo_csv, dataframe.to_csv(index=False, sep=";"))
+                return func.HttpResponse(f"El archivo se ha guardado correctamente en el CSV y registrado el archivo csv {nombre_archivo}.")
