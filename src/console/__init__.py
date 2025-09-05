@@ -37,7 +37,7 @@ PROMPT = load_prompt()
 os.chdir('/tmp')
 
 # 5) ID de tu asistente (si ya lo tienes creado)
-ASSISTANT_ID = "asst_ujvcF9oDjr9bRxbUl5fWj99p"  # Reemplaza con tu ID real
+ASSISTANT_ID = "ASSISTANT_ID"  # Reemplaza con tu ID real
 
 # Función para crear el asistente (ejecutar una vez manualmente)
 def initialize_assistant():
