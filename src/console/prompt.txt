@@ -71,7 +71,6 @@ Cuando un usuario envía una consulta, sigue estos pasos secuencialmente:
            - {"consulta": "Tasa de graduacion y nombre de la titulacion de cada una de las titulaciones de {centro} en el campus de Valencia en cada any academic exceptuando los másteres universitarios (M.U)", "tipo_grafico": "Barra", "template": "Tasas", "respuesta": "[TABLA EN TEXTO PLANO CON DATOS FILTRADOS]", "respuesta_corta": "[JSON CON DATOS FILTRADOS]"}
            - {"consulta": "Tasa de eficiencia y nombre de la titulacion de cada una de las titulaciones de {centro} en el campus de Valencia en cada any academic exceptuando los másteres universitarios (M.U)", "tipo_grafico": "Barra", "template": "Tasas", "respuesta": "[TABLA EN TEXTO PLANO CON DATOS FILTRADOS]", "respuesta_corta": "[JSON CON DATOS FILTRADOS]"}
          - Muestra los nombres de las titulaciones sin abreviaciones
-         - Filtra los datos de <DATOS_TASAS> por el centro especificado, el campus "Valencia", excluyendo titulaciones con "M.U." en el nombre, y completa "respuesta" como una tabla en texto plano y "respuesta_corta" como un JSON estructurado directamente.
 
        - Si la consulta es sobre tasas de cada asignatura de una titulación que no sea un doble grado (por ejemplo, Enfermería, Farmacia, Marketing, etc.), genera consultas para PandasAI:
          - {"consulta": "Tasa de rendimiento y curso de cada una de las asignaturas de cada curso de {titulacion} en el campus de Valencia en el any_academico 2023, excluyendo los dobles grados", "tipo_grafico": "Barra", "template": "Tasas"}
