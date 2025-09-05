@@ -73,7 +73,7 @@ LICENSE
 
 - **`generacion_descripciones`** - **Descripciones CSV de metadatos**
 -  Cuando se sube un excel a la carpeta de sharepoint, dispara un power automate que hace una llamada HTTP a esta función.
--   Recibe el archivo el nombre de la carpeta y se le pasa a gpt el archivo con code interpreter para que pueda leer el excel y se le pide que genere una descripcion del archivo excel y se guarda en el csv de metadatos. 
+-   Recibe el archivo y el nombre de la carpeta y se le pasa a la API de OpenAI el archivo con code interpreter para que pueda leer el excel y se le pide que genere una descripcion del archivo excel y se guarda en el csv de metadatos. 
   
 - **`prompt.txt`** — **Contrato y reglas del agente**.
   - Instrucciones del sistema: formato de **respuesta JSON**, plantillas disponibles (`matriculados`, `tasas`), títulos de gráficos, y convenciones para `metadata`.
